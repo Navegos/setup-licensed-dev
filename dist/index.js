@@ -178,7 +178,7 @@ async function availableGemVersions(gemExe) {
   await exec.exec(gemExe, ['list', 'licensed', '--exact', '--remote', '--all', '--quiet'], options);
 
   // Ensure that versions is not long enough to cause a timeout
-  // See https://github.com/github/setup-licensed/security/code-scanning/1
+  // See https://github.com/github/setup-licensed-dev/security/code-scanning/1
   if (listOutput.length > 10000) {
     core.warning('`gem list licensed` output is too long');
     core.debug(listOutput);

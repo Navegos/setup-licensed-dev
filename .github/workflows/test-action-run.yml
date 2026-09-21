@@ -1,4 +1,4 @@
-name: Test running setup-licensed
+name: Test running setup-licensed-dev
 permissions:
   contents: read
 
@@ -18,21 +18,21 @@ jobs:
 
     steps:
       # checkout the repo
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # install ruby
-      - uses: ruby/setup-ruby@401c19e14f474b54450cd3905bb8b86e2c8509cf
+      - uses: ruby/setup-ruby@a0102e0972be65f351c307e2d64b9314a57c8073
         with:
           bundler-cache: 'true'
           ruby-version: "3.0"
 
       # install node
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: "18.x"
+          node-version: "24.x"
 
       # run the action
-      - name: Run setup-licensed
+      - name: Run setup-licensed-dev
         uses: ./
         with:
           version: '4.x'
@@ -42,17 +42,17 @@ jobs:
 
     steps:
       # checkout the repo
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # do not install ruby
 
       # install node
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: "18.x"
+          node-version: "24.x"
 
       # run the action
-      - name: Run setup-licensed
+      - name: Run setup-licensed-dev
         uses: ./
         with:
           version: '3.x'

@@ -1,10 +1,10 @@
 const core = require('@actions/core');
 const sinon = require('sinon');
 
-const run = require('../lib/setup-licensed');
+const run = require('../lib/setup-licensed-dev');
 const installers = require('../lib/installers');
 
-describe('setup-licensed', () => {
+describe('setup-licensed-dev', () => {
   const version = '2.3.2';
 
   const processEnv = process.env;

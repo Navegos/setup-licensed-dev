@@ -28,12 +28,12 @@ steps:
 - uses: actions/setup-node@v3
 - run: npm install # install dependencies in local environment
 
-# setup ruby environment before running licensee/setup-licensed
+# setup ruby environment before running licensee/setup-licensed-dev
 - uses: ruby/setup-ruby@v1
   with:
     ruby-version: ruby
 
-- uses: licensee/setup-licensed@v1
+- uses: licensee/setup-licensed-dev@v1
   with:
     version: '4.x' # required: supports matching based on string equivalence or node-semver range
     install-dir: /path/to/install/at # optional: defaults to /usr/local/bin
